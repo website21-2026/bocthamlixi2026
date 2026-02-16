@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧧Bốc Thăm Lì Xì 2026🧧</title>
+  <meta name="description" content="Mini‑game Bốc thăm trúng thưởng Lì Xì đầu năm" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1> Chúc Mừng Năm Mới </h1>
+      <h4> Bính Ngọ 2026 </h4>
+      <p class="subtitle1">Trăm sự như ý - Tỷ sự như mơ</p>
+      <p class="subtitle2">Triệu triệu bất ngờ - Nghìn giờ hạnh phúc</p>
+    </header>
+  <!--Form thông tin-->
+    <section id="gate" class="gate" aria-labelledby="gateTitle">
+      <img src="assets/banhchung.png" alt="Bánh chưng" class="free-img-fixed"/>
+      <img src="assets/conngua1.png" alt="" class="free-img-conngua1"/>
+      <img src="assets/conngua2.png" alt="" class="free-img-conngua2"/>
+      <h2 id="gateTitle"></h2>
+      <form id="infoForm" novalidate>
+        <div class="form-row">
+          <label for="name">Họ và tên <span class="req">*</span></label>
+          <input id="name" name="name" type="text" required placeholder="" />
+          <small class="error" id="errName"></small>
+        </div>
+        <div class="form-row">
+          <label for="phone">Số tài khoản ngân hàng <span class="req">*</span></label>
+          <input id="phone" name="phone" type="text" required placeholder="" />
+          <small class="error" id="errPhone"></small>
+        </div>
+        <div class="form-row">
+          <label for="phone">Tên ngân hàng <span class="req">*</span></label>
+          <input id="bank" name="bank" type="text" required placeholder="" />
+          <small class="error" id="errBank"></small>
+        </div>
+        <button id="startBtn" class="btn" type="submit">Bắt đầu bốc thăm</button>
+      </form>
+    </section>
+
+    <!--Form Game -->
+    <section id="game" class="hidden" aria-label="Bảng 3×3 bao lì xì">
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <div id="grid" class="grid"></div>
+      <div id="result" class="result hidden">
+        <h2></h2>
+        <p id="prizeText"></p>
+        <button id="shareBtn" class="btn"></button>
+      </div>
+    </section>
+    <button id="resetBtn" class="reset hidden" title="Chỉ dành cho admin">🔒 Reset</button>
+    <canvas id="confettiCanvas" class="confetti"></canvas>
+    <footer>
+      <small><a href="#" id="howTo"></a></small>
+    </footer>
+    <!--<img src="assets/canhdao.png" alt="Cành đào" class="free-img-canhdao"/>-->
+    <!--<img src="assets/canhdao2.png" alt="Cành đào" class="free-img-canhdao2"/>-->
+    <!--<img src="assets/canhmai1.png" alt="Cành đào" class="free-img-canhmai1"/>-->
+    <!--<img src="assets/canhmai2.avif" alt="Cành đào" class="free-img-canhmai2"/>-->
+  </main>
+
+  <dialog id="howToDlg">s
+    <form method="dialog">
+      <h3>Hướng dẫn</h3>
+      <ol>
+        <li>Nhập Họ tên & SĐT → Bắt đầu chơi.</li>
+        <li>Chọn 1 bao trong 9 ô, xem phần thưởng.</li>
+        <li>Mỗi thiết bị chỉ được bốc 1 lần (lưu bằng <code>localStorage</code>).</li>
+      </ol>
+      <p>Nếu bạn là admin, thêm <code>?admin=1</code> để hiện nút reset.</p>
+      <button class="btn">Đóng</button>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
